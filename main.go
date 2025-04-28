@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	"golang.org/x/exp/constraints"
 )
 
@@ -10,7 +10,7 @@ import (
 //}
 
 func main() {
-	fmt.Println("Hello World")
+	//fmt.Println(mSort(input))
 }
 
 /*
@@ -22,7 +22,7 @@ chat log: https://chatgpt.com/share/6807d1fa-49ec-8006-acd4-19cd99f08f20
 func split[T constraints.Ordered](arr []T) int {
 	mid := len(arr) / 2
 	return mid
-}j
+}
 
 /*
 chat model: chat gpt 3.5
@@ -80,15 +80,15 @@ func qSort[T constraints.Ordered](arr []T) []T {
 		pivitIdx := 0
 		compare := len(arr) - 1
 
-		if arr[compare] < pivit{
+		if arr[compare] < pivit {
 			arr[pivitIdx] = arr[compare]
 		}
 
-		if arr[compare] > pivit{
+		if arr[compare] > pivit {
 
 		}
 	}
-	return  arr
+	return arr
 }
 
 /*
