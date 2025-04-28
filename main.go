@@ -99,7 +99,7 @@ func qSort[T constraints.Ordered](arr []T, tail, head int) []T {
 /*
 * ai model: GTP-4.1 mini
 * what was generated: mSort psudocode
-* chat: look at md file
+* chat: look at in the md folder on github: https://github.com/brettbeloin/L3RecurseBattle
 *
 * * function mSort(arr):
     cpArr = copy of arr
