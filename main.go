@@ -87,16 +87,48 @@ func qSort[T constraints.Ordered](arr []T) []T {
 		if arr[compare] > pivit {
 
 		}
+		return arr
 	}
-	return arr
 }
 
 /*
-* Merge sort:
-* func mSort(tail, head, arr):
-* 	splitHalf = Split(arr)
-* 	anotherSplit = Split(splitHalf)
-*
+* function mSort(arr):
+    cpArr = copy of arr
+
+    length = split(arr)  // split returns the midpoint index
+    left = cpArr[0:length]
+    right = cpArr[length:end]
+
+    if length of left is not 1:
+        left = mSort(left)
+
+    if length of right is not 1:
+        right = mSort(right)
+
+    leftIdx = 0
+    rightIdx = 0
+
+    for idx in range length of arr:
+        if rightIdx equals length of right:
+            arr[idx] = left[leftIdx]
+            leftIdx = leftIdx + 1
+            continue loop
+
+        if leftIdx equals length of left:
+            arr[idx] = right[rightIdx]
+            rightIdx = rightIdx + 1
+            continue loop
+
+        if left[leftIdx] < right[rightIdx]:
+            arr[idx] = left[leftIdx]
+            leftIdx = leftIdx + 1
+
+        else if right[rightIdx] < left[leftIdx]:
+            arr[idx] = right[rightIdx]
+            rightIdx = rightIdx + 1
+
+    return arr
+
 * Quick Sort:
 * func qSort(tail, head, arr):
 *		mid = Split(arr)
