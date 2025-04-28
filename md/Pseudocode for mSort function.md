@@ -1,35 +1,11 @@
-package main
+# Pseudocode for mSort function
+Created: 4/27/2025, 10:32:51 PM
+Last Updated: 4/27/2025, 10:32:55 PM
+---
 
-import (
-	//"fmt"
-	"golang.org/x/exp/constraints"
-)
+### User
 
-//type generic interface {
-//	~int | ~string | ~float64
-//}
-
-func main() {
-	//fmt.Println(mSort(input))
-}
-
-/*
-chat model: chat gpt 3.5
-why: Used to help fix a bug with the split func
-chat log: https://chatgpt.com/share/6807d1fa-49ec-8006-acd4-19cd99f08f20
-*/
-
-func split[T constraints.Ordered](arr []T) int {
-	mid := len(arr) / 2
-	return mid
-}
-
-/*
-chat model: chat gpt 3.5
-why: needed help fixing the compairtion logic for a generic type
-chat log: https://chatgpt.com/share/6807d668-4890-8006-ae55-75415959763f
-*/
-
+create psuedocode for this:
 func mSort[T constraints.Ordered](arr []T) []T {
 	cpArr := make([]T, len(arr))
 	copy(cpArr, arr)
@@ -74,34 +50,15 @@ func mSort[T constraints.Ordered](arr []T) []T {
 	return arr
 }
 
-func qSort[T constraints.Ordered](arr []T, tail, head int) []T {
-	for {
-		pivit := arr[0]
-		pivitIdx := 0
-		compare := len(arr) - 1
-		compareIdx := 0
-		temp := 0
 
-		if arr[compare] < pivit {
-			temp = pivitIdx
-			arr[pivitIdx] = arr[compareIdx]
-			compareIdx = temp
-			pivitIdx++
-		}
+---
 
-		if arr[compare] > pivit {
+### Assistant (gpt-4.1-mini)
 
-		}
-		return arr
-	}
-}
+Here's the pseudocode for your `mSort` function, which implements a merge sort algorithm:
 
-/*
-* ai model: GTP-4.1 mini
-* what was generated: mSort psudocode
-* chat: look at md file
-*
-* * function mSort(arr):
+```
+function mSort(arr):
     cpArr = copy of arr
 
     length = split(arr)  // split returns the midpoint index
@@ -137,17 +94,9 @@ func qSort[T constraints.Ordered](arr []T, tail, head int) []T {
             rightIdx = rightIdx + 1
 
     return arr
+```
 
-* Quick Sort:
-* func qSort(tail, head, arr):
-*		mid = Split(arr)
-*		left = arr[mid]
-*		right = arr[mid]
-*
-*		if left or right dont't have one elm:
-*			qSort(left)
-*			qsort(right)
+Let me know if you'd like me to explain any part of it!
 
-		for idx range arr:
 
-*/
+---
